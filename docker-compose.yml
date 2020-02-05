@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+
+  node-nlp:
+    image: node:12.3-alpine
+    command: sh -c "npm install && npm start"
+    environment:
+      - NODE_ENV=development
+      - PORT=8000
+    ports:
+      - "8000:8000"
+    working_dir: /root/node-nlp
+    volumes:
+      - ./:/root/node-nlp:cached

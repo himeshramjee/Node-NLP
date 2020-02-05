@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>Explore: Sentiment Analyzer</title>
+    <link rel="stylesheet" href="./css/style-node-nlp.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico"/>
+</head>
+
+<body>
+<div id="div-page-description">
+    <p>
+        This spike was built using a random tutorial I found. You'll find it <a href="https://blog.logrocket.com/sentiment-analysis-node-js/">here.</a>
+        <br/>
+        It uses the <a href="https://github.com/NaturalNode/natural">Natural Node</a> NodeJS module to perform the sentiment analysis.
+        For each request, as you type, the module returns values between -1 and 1 that are roughly mapped to displayed sad, neutral and happy emoticons.
+        I thought this was really cool and it is but the results aren't as decent as I expected. But it served my purpose of building my first simple NodeJS webpage. :)
+    </p>
+</div>
+
+<h1 id="title">Please write product review:</h1>
+<form id="reviewForm">
+    <textarea id="review" rows="4" cols="50"></textarea>
+</form>
+
+<div id="emojiSection"></div>
+
+<script type="text/javascript" src="./js/node-nlp.js"></script>
+</body>
+
+</html>
