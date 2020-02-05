@@ -11,6 +11,7 @@ Steps taken to host the Node-NLP docker container on an WS LightSail instance an
    1. Not sure what the best practice is here but I'm for now I'm just doing a git pull so don't want config files (for example) exposed on the /var/www path.
 1. Pull down the git repo
    1. `git clone https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/Node-NLP`
+   1. Move away from HTTPS Git creds: https://console.aws.amazon.com/iam/home?region=eu-west-1#/security_credentials?credentials=codecommit
 1. Start the container
    1. `cd /var/containers/Node-NLP`
    1. `docker-compose up -d node-nlp`
