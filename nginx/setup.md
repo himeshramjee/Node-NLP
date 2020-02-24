@@ -20,10 +20,9 @@ didn't follow through on exploring that idea due to the associated costs. I reca
 1. Created /var/containers directory
    * I'm not sure what the best practice is here but I'm for now I'm just doing a git pull so don't want config files (like docker-compose.yml for example) to mistakenly get exposed on the /var/www path.
 1. Pull down the git repo
-   1. `git clone https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/Node-NLP`
-   1. Move away from HTTPS Git creds: https://console.aws.amazon.com/iam/home?region=eu-west-1#/security_credentials?credentials=codecommit
+   1. `sudo mkdir node-nlp && sudo chown ubuntu:ubuntu node-nlp && cd node-nlp`
+   1. `git clone https://github.com/himeshramjee/Node-NLP.git`
 1. Start the container
-   1. `cd /var/containers/Node-NLP`
    1. `docker-compose up -d node-nlp`
    1. Verify with `curl localhost:8000/node-nlp`
 1. Install Nginx (this should be dockerized too)
