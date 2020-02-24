@@ -11,7 +11,7 @@ const submitReview = (e) => {
   const title = document.getElementById('title');
   const outline = document.querySelector(':focus');
 
-  fetch('/', options)
+  fetch('/node-nlp', options)
     .then(res => res.json())
     .then (({ analysis }) => {
       if (analysis < 0) {
