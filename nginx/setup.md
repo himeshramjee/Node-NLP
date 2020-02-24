@@ -27,40 +27,11 @@ didn't follow through on exploring that idea due to the associated costs. I reca
    1. Verify with `curl localhost:8000/node-nlp`
 1. Install Nginx (this should be dockerized too)
    * `sudo apt-get install nginx`
-1. Configure Noddy1 application (of which this node-nlp is the first sandbox project)
+1. Configure an application (node-nlp in this case)
    1. `sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak`
        * This is optional. I only need this for quick reference.
    1. `sudo rm /etc/nginx/sites-enabled/default` (disable the default nginx welcome page)
-   1. `sudo vi /etc/nginx/sites-available/node-nlp` and add the following configuration
-        ```
-        TODO: Anything not rooted under '/node-nlp' or '/api/appName' will be a problem as all requests come in on port 80 so we won't be able to proxy correctly. Consider the '/css' path for example.
-
-        server {
-                listen 80;
-                listen [::]:80;
-
-                server_name _;
-
-                root /var/containers;
-
-                location /node-nlp {
-                        proxy_pass http://localhost:8000/;
-                }
-
-                location /api/nlp {
-                        proxy_pass http://localhost:8000/api/nlp/;
-                }
-
-                location /css {
-                        proxy_pass http://localhost:8000/css/;
-                }
-
-                location /js {
-                        proxy_pass http://localhost:8000/js/;
-                }
-        }
-        ```
-
+   1. `sudo cp /var/containers/node-nlp/nginx/sites-available-node-nlp.conf /etc/nginx/sites-available/node-nlp`
 1. Enable the new application
    * `sudo ln -s /etc/nginx/sites-available/node-nlp /etc/nginx/sites-enabled/node-nlp`
 1. Restart nginx
