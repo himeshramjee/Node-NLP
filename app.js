@@ -12,8 +12,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-
-
 app.use('/node-nlp', nlpRouter);
 app.use('/node-nlp', express.static(path.join(__dirname, 'public')));
 

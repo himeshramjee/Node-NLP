@@ -8,7 +8,7 @@ const router = express.Router();
 const spellCorrector = new SpellCorrector();
 spellCorrector.loadDictionary();
 
-router.post('/node-nlp', function(req, res, next) {
+router.post('/analyse', function(req, res, next) {
     const { review } = req.body;
     const lexedReview = aposToLexForm(review);
     const casedReview = lexedReview.toLowerCase();
